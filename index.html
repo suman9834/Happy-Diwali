@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Diwali Everyone 💖</title>
+<style>
+body {
+  margin:0;
+  height:100vh;
+  overflow:hidden;
+  background: radial-gradient(circle at bottom, #000000, #0d001a, #330033);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Poppins',sans-serif;
+  flex-direction:column;
+  position:relative;
+}
+
+/* Intro */
+#intro {
+  position:absolute;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle at center, #ffeb3b, #ff9800, #ff4500);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:20;
+  opacity:1;
+  transition:opacity 2s ease;
+  flex-direction:column;
+}
+#intro h1 {
+  font-size:4rem;
+  color:#fff;
+  text-shadow:0 0 20px #fff,0 0 40px #ffd700,0 0 60px #ff5722;
+  animation:pulse 2s infinite alternate;
+}
+@keyframes pulse{
+  from{text-shadow:0 0 20px #fff,0 0 40px #ffd700;}
+  to{text-shadow:0 0 40px #ffeb3b,0 0 80px #ff9800;}
+}
+
+/* Main content */
+#mainContent {
+  opacity:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  transition:opacity 2s ease;
+  position:relative;
+}
+
+h2 {
+  color:#ffd700;
+  font-size:3.5rem;
+  text-shadow:0 0 10px #ffeb3b,0 0 30px #ff9800;
+  animation:glowPulse 2s infinite alternate;
+  z-index:10;
+  margin-bottom:60px;
+  transform:translateY(-50px);
+}
+@keyframes glowPulse{
+  0%{text-shadow:0 0 10px #ffeb3b,0 0 30px #ff9800; transform:translateY(-50px) scale(1);}
+  50%{text-shadow:0 0 40px #ffeb3b,0 0 60px #ffd700; transform:translateY(-55px) scale(1.1);}
+  100%{text-shadow:0 0 10px #ffeb3b,0 0 30px #ff9800; transform:translateY(-50px) scale(1);}
+}
+
+/* Golden Diya */
+.diya {
+  position:relative;
+  width:180px;
+  height:90px;
+  background:#ff8c00;
+  border-radius:90px 90px 0 0;
+  box-shadow:0 0 60px #ff4500,0 0 100px #ffd700;
+  margin-bottom:60px;
+}
+.flame {
+  position:absolute;
+  top:-80px;
+  left:50%;
+  width:40px;
+  height:70px;
+  background: radial-gradient(circle at bottom,#fff200,#ff4500);
+  border-radius:50%;
+  transform:translateX(-50%);
+  animation:flicker 0.15s infinite alternate;
+  box-shadow:0 0 60px #ff9800,0 0 100px #ffd700;
+}
+@keyframes flicker{
+  from{transform:translateX(-50%) scale(1);opacity:0.9;}
+  to{transform:translateX(-50%) scale(1.15);opacity:1;}
+}
+
+/* Fireworks sparks */
+.sparkle {
+  position:absolute;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  animation:sparkleAnim 2s infinite ease-in-out;
+}
+@keyframes sparkleAnim{
+  0%,100%{opacity:0; transform:translateY(0) scale(0.5);}
+  50%{opacity:1; transform:translateY(-40px) scale(1);}
+}
+
+/* Floating Spark Words */
+.sparkWord {
+  position:absolute;
+  font-size:1.2rem;
+  color:gold;
+  text-shadow:0 0 10px #ffd700;
+  opacity:0.8;
+  animation:floatWord 4s linear infinite;
+}
+@keyframes floatWord{
+  0%{transform:translateY(0px) scale(0.8);opacity:0;}
+  50%{opacity:1;}
+  100%{transform:translateY(-200px) scale(1);opacity:0;}
+}
+
+/* 3D Hearts */
+.heart3D {
+  position:absolute;
+  width:20px;
+  height:20px;
+  background:pink;
+  transform:rotate(-45deg);
+  clip-path: polygon(50% 0%,61% 15%,75% 25%,75% 45%,50% 100%,25% 45%,25% 25%,39% 15%);
+  opacity:0.9;
+  animation:flyHeart 4s linear infinite;
+}
+@keyframes flyHeart{
+  0%{transform:translate3d(0,0,0) rotate(-45deg);opacity:0;}
+  50%{opacity:1;}
+  100%{transform:translate3d(var(--x),var(--y),var(--z)) rotate(-45deg);opacity:0;}
+}
+
+/* Heart Trails */
+.heartTrail {
+  position:absolute;
+  width:10px;
+  height:10px;
+  background:gold;
+  border-radius:50%;
+  opacity:0.8;
+  animation:trailAnim 1s linear forwards;
+}
+@keyframes trailAnim{
+  0%{opacity:1; transform:translate(0,0) scale(1);}
+  100%{opacity:0; transform:translate(var(--tx),var(--ty)) scale(0);}
+}
+
+/* Footer */
+footer {
+  color:#ffcc80;
+  font-size:1.5rem;
+  text-shadow:0 0 20px #ffa726;
+  margin-top:20px;
+  animation:glowPulse 2s infinite alternate;
+}
+
+/* Creator Tag */
+#creatorTag {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  font-size: 0.9rem;
+  color: #ffd700;
+  text-shadow: 0 0 5px #ffcc00;
+  opacity: 0.8;
+  z-index: 50;
+  font-family: 'Poppins', sans-serif;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+
+<div id="intro">
+  <h1>✨ Shubh Deepavali ✨</h1>
+</div>
+
+<div id="mainContent">
+  <h2>✨ Happy Diwali Everyone 💖 ✨</h2>
+  <div class="diya"><div class="flame"></div></div>
+  <footer>🪔 Stay Bright & Happy Always 🪔</footer>
+</div>
+
+<!-- Creator Tag -->
+<div id="creatorTag">Created by Suman Kumar</div>
+
+<script>
+// Intro fade out
+setTimeout(()=>{
+  document.getElementById('intro').style.opacity=0;
+  setTimeout(()=>{
+    document.getElementById('intro').style.display='none';
+    document.getElementById('mainContent').style.opacity=1;
+  },2000);
+},3000);
+
+// Fireworks / Patakhe
+for(let i=0;i<100;i++){
+  let s=document.createElement("div");
+  s.classList.add("sparkle");
+  s.style.left=Math.random()*100+"vw";
+  s.style.top=Math.random()*100+"vh";
+  let size=(Math.random()*8+4);
+  s.style.width=size+"px";
+  s.style.height=size+"px";
+  s.style.background=`hsl(${Math.random()*360},100%,70%)`;
+  s.style.animationDelay=Math.random()*3+"s";
+  document.body.appendChild(s);
+}
+
+// Floating Spark Words
+let words=["🪔 Love","✨ Light","💖 Joy","🎆 Happiness"];
+for(let i=0;i<words.length;i++){
+  let w=document.createElement("div");
+  w.classList.add("sparkWord");
+  w.innerText=words[i];
+  w.style.left=Math.random()*80+10+"vw";
+  w.style.bottom="-20px";
+  w.style.animationDelay=(i*1.5)+"s";
+  document.body.appendChild(w);
+}
+
+// 3D Hearts
+for(let i=0;i<50;i++){
+  let h=document.createElement("div");
+  h.classList.add("heart3D");
+  h.style.left="50%";
+  h.style.top="50%";
+  let x=(Math.random()-0.5)*600;
+  let y=(Math.random()-0.5)*400;
+  let z=(Math.random()-0.5)*300;
+  h.style.setProperty('--x',x+'px');
+  h.style.setProperty('--y',y+'px');
+  h.style.setProperty('--z',z+'px');
+  h.style.animationDelay=Math.random()*3+"s";
+  document.body.appendChild(h);
+}
+
+// Click/Tap confetti + heart explosion
+function spawnConfetti(x,y){
+  for(let i=0;i<30;i++){
+    let c=document.createElement("div");
+    c.classList.add("heartTrail");
+    c.style.left=x+"px";
+    c.style.top=y+"px";
+    let dx=(Math.random()-0.5)*250;
+    let dy=(Math.random()-0.5)*250;
+    c.style.setProperty('--tx',dx+'px');
+    c.style.setProperty('--ty',dy+'px');
+    document.body.appendChild(c);
+    setTimeout(()=>{c.remove();},1200);
+  }
+}
+document.body.addEventListener('click',e=>{spawnConfetti(e.clientX,e.clientY);});
+document.body.addEventListener('touchstart',e=>{for(let t of e.touches){spawnConfetti(t.clientX,t.clientY);}});
+
+// Background music
+let audio=document.createElement("audio");
+audio.src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+audio.autoplay=true; audio.loop=true; audio.volume=0.3;
+document.body.appendChild(audio);
+</script>
+
+</body>
+</html>
